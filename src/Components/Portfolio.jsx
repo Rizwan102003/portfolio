@@ -31,28 +31,28 @@ const imageAltText = "desktop with coffee";
  */
 const projectList = [
   {
-    title: "10 Things To Know About Azure Static Web Apps 🎉",
+    title: "Bridge Token",
     description:
-      "Collaboration to create a beginner friendly article to help explain Azure Static Web Apps and tooling to get started.",
-    url: "https://dev.to/azure/10-things-to-know-about-azure-static-web-apps-3n4i",
+      "This project aims to create a bridge token that enables seamless interoperability between the Bitcoin SV (BSV) blockchain and the Bitcoin blockchain. Utilizing React.js for the frontend, Solidity for smart contracts, Hardhat for editing, compiling, debugging, and deploying, and ethers.js for integrating the frontend and smart contract.",
+    url: "",
   },
   {
-    title: "Web Development for Beginners",
+    title: "United HealthCare Services",
     description:
-      "Contributed sketch note imagery to accompany each lesson. These help provide visual representation of what is being taught.",
-    url: "https://github.com/microsoft/web-dev-for-beginners",
+      "Collaborated with talented developers to make a healthcare website using postman API platform.",
+    url: "",
   },
   {
-    title: "My Resume Site",
+    title: "My portfolio Site",
     description:
-      "Created from Microsoft's resume workshop and deployed to GitHub pages. Includes my experience and design abilities.",
-    url: "https://github.com/microsoft/workshop-library/tree/main/full/build-resume-website",
+      "Created from Microsoft's repo and deployed to Azure Static webpages. Includes my experience and design abilities.",
+    url: "https://orange-flower-07a846900.4.azurestaticapps.net",
   },
   {
-    title: "GitHub Codespaces and github.dev",
+    title: "working at Code Social",
     description:
-      "Video interview to explain when to use GitHub.dev versus GitHub Codespaces, and how best to use each tool.",
-    url: "https://www.youtube.com/watch?v=c3hHhRME_XI",
+      "Working as an executive team member at Code Social, a student-led organization that aims to provide a platform for students to learn and grow in the field of technology.",
+    url: "",
   },
 ];
 
