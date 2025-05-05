@@ -31,7 +31,7 @@ const Resume = () => {
       <div>
         <h3 className="text-2xl font-semibold mb-3">Aspirations</h3>
         <p className="text-md">
-          Preparing for GATE CSE 2026 and GATE DS & AI 2026 with the goal of achieving AIR 1. Exploring roles in:
+          Exploring roles in:
           <span className="font-medium"> Data Science, Software Development, Java Backend, Cloud & DevOps Engineering.</span>
         </p>
       </div>
