@@ -9,5 +9,5 @@ export default defineConfig({
   build: {
     outDir: 'dist',
   },
-  base: '/', // 👈 important for routing
+  base: '/portfolio/', 
 });
