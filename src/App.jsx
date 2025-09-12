@@ -12,9 +12,9 @@ import Contact from './pages/Contact';
 const App = () => {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="min-h-screen">
         <Navbar />
-        <main className="flex-grow">
+        <main>
           <Routes>
             <Route path="/portfolio" element={<Home />} />
             <Route path="/about" element={<About />} />
