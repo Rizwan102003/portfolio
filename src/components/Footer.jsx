@@ -32,15 +32,15 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="glass-dark mt-20">
+    <footer className="glass-dark mt-20 border-t border-blue-500/20">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <h3 className="text-2xl font-bold text-white mb-2">
-              Let's Connect
+            <h3 className="text-2xl font-bold mb-2 tech-font gradient-text">
+              &lt;/Connect&gt;
             </h3>
-            <p className="text-white/70">
-              Building the future, one line of code at a time.
+            <p className="text-blue-200/70 mono-font text-sm">
+              // Building the future with code
             </p>
           </div>
           
@@ -51,7 +51,7 @@ const Footer = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-all duration-300 hover:scale-110 glow-hover p-3 rounded-full glass"
+                className="text-blue-200/70 hover:text-cyan-400 transition-all duration-300 hover:scale-110 glow-hover p-3 rounded-lg glass border border-blue-500/20"
                 aria-label={link.name}
               >
                 {link.icon}
@@ -60,10 +60,21 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-white/20 mt-8 pt-8 text-center">
-          <p className="text-white/60 text-sm">
-            &copy; {new Date().getFullYear()} Sk Md Rizwan. Crafted with ❤️ and lots of ☕
-          </p>
+        <div className="border-t border-blue-500/20 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center text-blue-200/60 text-sm mono-font">
+            <p>
+              &copy; {new Date().getFullYear()} Sk Md Rizwan. Engineered with 💙 and ☕
+            </p>
+            <div className="flex items-center mt-4 md:mt-0 space-x-4">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full status-online"></div>
+                <span className="text-xs">Available for work</span>
+              </div>
+              <div className="text-xs">
+                <span className="text-cyan-400">v2.0.1</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
