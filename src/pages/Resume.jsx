@@ -130,7 +130,7 @@ const Resume = () => {
                           <ul className="space-y-2">
                             {exp.achievements.map((achievement, idx) => (
                               <li key={idx} className="text-blue-200 text-sm flex items-start gap-2">
-                                <span className="text-green-400 mt-1 mono-font">></span>
+                                <span className="text-green-400 mt-1 mono-font">&gt</span>
                                 {achievement}
                               </li>
                             ))}
@@ -273,16 +273,16 @@ const Resume = () => {
                 </p>
                 <div className="space-y-2 text-sm mono-font">
                   <p className="text-green-400">
-                    > Status: ACTIVELY_SEEKING
+                    &gt Status: ACTIVELY_SEEKING
                   </p>
                   <p className="text-blue-200">
-                    > Interests: [Data Science, Backend Dev, Cloud, DevOps]
+                    &gt Interests: [Data Science, Backend Dev, Cloud, DevOps]
                   </p>
                   <p className="text-yellow-400">
-                    > Availability: IMMEDIATE
+                    &gt Availability: IMMEDIATE
                   </p>
                   <p className="text-purple-400">
-                    > Location: Remote/Hybrid/On-site
+                    &gt Location: Remote/Hybrid/On-site
                   </p>
                 </div>
               </div>

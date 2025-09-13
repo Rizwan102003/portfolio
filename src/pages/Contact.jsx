@@ -102,11 +102,11 @@ const Contact = () => {
                   $ whoami --interests
                 </p>
                 <div className="space-y-1 text-sm mono-font">
-                  <p className="text-green-400">> Full-time opportunities</p>
-                  <p className="text-blue-400">> Freelance projects</p>
-                  <p className="text-yellow-400">> Research collaborations</p>
-                  <p className="text-purple-400">> Startup ventures</p>
-                  <p className="text-red-400">> Technical consultations</p>
+                  <p className="text-green-400">&gt Full-time opportunities</p>
+                  <p className="text-blue-400">&gt Freelance projects</p>
+                  <p className="text-yellow-400">&gt Research collaborations</p>
+                  <p className="text-purple-400">&gt Startup ventures</p>
+                  <p className="text-red-400">&gt Technical consultations</p>
                 </div>
               </div>
 
