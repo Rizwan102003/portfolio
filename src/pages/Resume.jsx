@@ -75,13 +75,13 @@ const Resume = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-24">
+    <div className="min-h-screen bg-primary pt-24">
       {/* Header */}
       <section className="section">
         <div className="container">
           <div className="text-center mb-16">
-            <h1 className="text-h1 text-gray-900 mb-6">Resume</h1>
-            <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
+            <h1 className="text-primary mb-6">Resume</h1>
+            <p className="text-lg text-muted max-w-3xl mx-auto mb-8">
               Comprehensive overview of my skills, experience, and achievements
             </p>
             
@@ -104,87 +104,83 @@ const Resume = () => {
             <div className="lg:col-span-2 space-y-8">
               {/* Experience Section */}
               <div className="card">
-                <div className="card-content">
-                  <h2 className="text-h2 text-gray-900 mb-8">Experience</h2>
-                  
-                  <div className="space-y-8">
-                    {experiences.map((exp, index) => (
-                      <div key={index} className="relative">
-                        <div className="flex items-start gap-4">
-                          <div className="w-3 h-3 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                          <div className="flex-1">
-                            <div className="bg-gray-50 rounded-lg p-4 mb-4 border border-gray-200">
-                              <h3 className="text-h3 text-gray-900">{exp.title}</h3>
-                              <p className="text-accent font-medium">{exp.company}</p>
-                              <p className="text-muted text-small font-mono">{exp.period}</p>
-                            </div>
-                            
-                            <p className="text-gray-700 mb-4">{exp.description}</p>
-                            
-                            <div className="mb-4">
-                              <h4 className="text-small font-medium text-gray-700 mb-2">
-                                Key Achievements
-                              </h4>
-                              <ul className="space-y-2">
-                                {exp.achievements.map((achievement, idx) => (
-                                  <li key={idx} className="text-gray-600 text-small flex items-start gap-2">
-                                    <span className="text-green-500 mt-1">•</span>
-                                    {achievement}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-
-                            <div className="flex flex-wrap gap-2">
-                              {exp.tech.map((tech, idx) => (
-                                <span key={idx} className="badge">
-                                  {tech}
-                                </span>
+                <h2 className="text-primary mb-8">Experience</h2>
+                
+                <div className="space-y-8">
+                  {experiences.map((exp, index) => (
+                    <div key={index} className="relative">
+                      <div className="flex items-start gap-4">
+                        <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="flex-1">
+                          <div className="bg-tertiary rounded-lg p-4 mb-4 border">
+                            <h3 className="text-primary font-semibold">{exp.title}</h3>
+                            <p className="text-accent font-medium">{exp.company}</p>
+                            <p className="text-muted text-sm font-mono">{exp.period}</p>
+                          </div>
+                          
+                          <p className="text-secondary mb-4">{exp.description}</p>
+                          
+                          <div className="mb-4">
+                            <h4 className="text-sm font-medium text-primary mb-2">
+                              Key Achievements
+                            </h4>
+                            <ul className="space-y-2">
+                              {exp.achievements.map((achievement, idx) => (
+                                <li key={idx} className="text-muted text-sm flex items-start gap-2">
+                                  <span className="text-accent mt-1">•</span>
+                                  {achievement}
+                                </li>
                               ))}
-                            </div>
+                            </ul>
+                          </div>
+
+                          <div className="flex flex-wrap gap-2">
+                            {exp.tech.map((tech, idx) => (
+                              <span key={idx} className="badge">
+                                {tech}
+                              </span>
+                            ))}
                           </div>
                         </div>
-                        {index < experiences.length - 1 && (
-                          <div className="w-px h-8 bg-gray-300 ml-1.5 mt-4"></div>
-                        )}
                       </div>
-                    ))}
-                  </div>
+                      {index < experiences.length - 1 && (
+                        <div className="w-px h-8 bg-border ml-1.5 mt-4"></div>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
 
               {/* Education Section */}
               <div className="card">
-                <div className="card-content">
-                  <h2 className="text-h2 text-gray-900 mb-8">Education</h2>
-                  
-                  {education.map((edu, index) => (
-                    <div key={index} className="space-y-4">
-                      <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                        <h3 className="text-h3 text-gray-900">{edu.degree}</h3>
-                        <p className="text-accent font-medium">{edu.institution}</p>
-                        <div className="flex justify-between items-center mt-2">
-                          <p className="text-muted font-mono">{edu.period}</p>
-                          <p className="text-green-600 font-bold">GPA: {edu.gpa}</p>
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <h4 className="text-small font-medium text-gray-700 mb-2">
-                          Highlights
-                        </h4>
-                        <ul className="space-y-2">
-                          {edu.highlights.map((highlight, idx) => (
-                            <li key={idx} className="text-gray-600 text-small flex items-start gap-2">
-                              <span className="text-yellow-500 mt-1">★</span>
-                              {highlight}
-                            </li>
-                          ))}
-                        </ul>
+                <h2 className="text-primary mb-8">Education</h2>
+                
+                {education.map((edu, index) => (
+                  <div key={index} className="space-y-4">
+                    <div className="bg-tertiary rounded-lg p-4 border">
+                      <h3 className="text-primary font-semibold">{edu.degree}</h3>
+                      <p className="text-accent font-medium">{edu.institution}</p>
+                      <div className="flex justify-between items-center mt-2">
+                        <p className="text-muted font-mono">{edu.period}</p>
+                        <p className="text-accent font-bold">GPA: {edu.gpa}</p>
                       </div>
                     </div>
-                  ))}
-                </div>
+                    
+                    <div>
+                      <h4 className="text-sm font-medium text-primary mb-2">
+                        Highlights
+                      </h4>
+                      <ul className="space-y-2">
+                        {edu.highlights.map((highlight, idx) => (
+                          <li key={idx} className="text-muted text-sm flex items-start gap-2">
+                            <span className="text-accent mt-1">★</span>
+                            {highlight}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -192,76 +188,70 @@ const Resume = () => {
             <div className="space-y-8">
               {/* Skills Section */}
               <div className="card">
-                <div className="card-content">
-                  <h2 className="text-h2 text-gray-900 mb-6">Skills</h2>
-                  
-                  <div className="space-y-6">
-                    {skillCategories.map((skillGroup, index) => (
-                      <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                        <h3 className="text-small font-medium text-gray-700 mb-3">
-                          {skillGroup.category}
-                        </h3>
-                        <div className="flex flex-wrap gap-2">
-                          {skillGroup.skills.map((skill, idx) => (
-                            <span key={idx} className="badge">
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
+                <h2 className="text-primary mb-6">Skills</h2>
+                
+                <div className="space-y-6">
+                  {skillCategories.map((skillGroup, index) => (
+                    <div key={index} className="bg-tertiary rounded-lg p-4 border">
+                      <h3 className="text-sm font-medium text-primary mb-3">
+                        {skillGroup.category}
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {skillGroup.skills.map((skill, idx) => (
+                          <span key={idx} className="badge">
+                            {skill}
+                          </span>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
               {/* Certifications Section */}
               <div className="card">
-                <div className="card-content">
-                  <h2 className="text-h2 text-gray-900 mb-6">Certifications</h2>
-                  
-                  <div className="space-y-6">
-                    {certifications.map((cert, index) => (
-                      <div key={index} className="bg-gray-50 rounded-lg p-4 border-l-4 border-blue-600">
-                        <h3 className="font-bold text-gray-900 text-small">{cert.name}</h3>
-                        <p className="text-accent text-small">{cert.issuer}</p>
-                        <p className="text-muted text-caption mb-2">{cert.date}</p>
-                        <div className="flex flex-wrap gap-1">
-                          {cert.skills.map((skill, idx) => (
-                            <span
-                              key={idx}
-                              className="bg-blue-50 text-blue-700 text-caption px-2 py-1 rounded border"
-                            >
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
+                <h2 className="text-primary mb-6">Certifications</h2>
+                
+                <div className="space-y-6">
+                  {certifications.map((cert, index) => (
+                    <div key={index} className="bg-tertiary rounded-lg p-4 border-l-4 border-l-accent">
+                      <h3 className="font-bold text-primary text-sm">{cert.name}</h3>
+                      <p className="text-accent text-sm">{cert.issuer}</p>
+                      <p className="text-muted text-xs mb-2">{cert.date}</p>
+                      <div className="flex flex-wrap gap-1">
+                        {cert.skills.map((skill, idx) => (
+                          <span
+                            key={idx}
+                            className="bg-secondary text-accent text-xs px-2 py-1 rounded border"
+                          >
+                            {skill}
+                          </span>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
               {/* Status */}
               <div className="card">
-                <div className="card-content">
-                  <h2 className="text-h2 text-gray-900 mb-6">Current Status</h2>
-                  
-                  <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                    <div className="space-y-2 text-small">
-                      <p className="flex items-center gap-2">
-                        <div className="status-dot"></div>
-                        <span className="font-medium">Actively seeking opportunities</span>
-                      </p>
-                      <p className="text-muted">
-                        Interests: Data Science, Backend Development, Cloud, DevOps
-                      </p>
-                      <p className="text-muted">
-                        Availability: Immediate
-                      </p>
-                      <p className="text-muted">
-                        Location: Remote/Hybrid/On-site
-                      </p>
-                    </div>
+                <h2 className="text-primary mb-6">Current Status</h2>
+                
+                <div className="bg-tertiary rounded-lg p-4 border">
+                  <div className="space-y-2 text-sm">
+                    <p className="flex items-center gap-2">
+                      <div className="status-dot"></div>
+                      <span className="font-medium text-primary">Actively seeking opportunities</span>
+                    </p>
+                    <p className="text-muted">
+                      <span className="text-accent">Interests:</span> Data Science, Backend Development, Cloud, DevOps
+                    </p>
+                    <p className="text-muted">
+                      <span className="text-accent">Availability:</span> Immediate
+                    </p>
+                    <p className="text-muted">
+                      <span className="text-accent">Location:</span> Remote/Hybrid/On-site
+                    </p>
                   </div>
                 </div>
               </div>
@@ -271,19 +261,25 @@ const Resume = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section bg-subtle">
+      <section className="section bg-secondary">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-h2 text-gray-900 mb-4">Ready to contribute</h2>
-            <p className="text-muted mb-8">
+            <h2 className="text-primary mb-4">Ready to contribute</h2>
+            <p className="text-muted mb-8 leading-relaxed">
               I'm excited to bring my skills and passion to your next project. 
               Let's discuss how I can contribute to your team's success.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact" className="btn btn-primary">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
                 Let's Connect
               </a>
               <a href="/projects" className="btn btn-secondary">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
                 View Projects
               </a>
             </div>

@@ -69,13 +69,13 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-24">
+    <div className="min-h-screen bg-primary pt-24">
       {/* Header */}
       <section className="section">
         <div className="container">
           <div className="text-center mb-16">
-            <h1 className="text-h1 text-gray-900 mb-6">Get in Touch</h1>
-            <p className="text-xl text-muted max-w-3xl mx-auto">
+            <h1 className="text-primary mb-6">Get in Touch</h1>
+            <p className="text-lg text-muted max-w-3xl mx-auto">
               Let's discuss your project and how we can work together to bring your ideas to life
             </p>
           </div>
@@ -84,59 +84,55 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div className="card">
-                <div className="card-content">
-                  <h2 className="text-h2 text-gray-900 mb-8">Let's Connect</h2>
-                  
-                  <div className="space-y-6">
-                    {contactMethods.map((method, index) => (
-                      <a
-                        key={index}
-                        href={method.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors border border-gray-200"
-                      >
-                        <div className="p-3 rounded-lg bg-blue-100 text-blue-600">
-                          {method.icon}
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="font-semibold text-gray-900">{method.title}</h3>
-                          <p className="text-gray-600 text-small">{method.value}</p>
-                          <p className="text-muted text-caption">{method.description}</p>
-                        </div>
-                        <div className="text-gray-400">
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
+                <h2 className="text-primary mb-8">Let's Connect</h2>
+                
+                <div className="space-y-4">
+                  {contactMethods.map((method, index) => (
+                    <a
+                      key={index}
+                      href={method.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 p-4 bg-tertiary rounded-lg hover:border-accent transition-all border"
+                    >
+                      <div className="p-3 rounded-lg bg-secondary text-accent border">
+                        {method.icon}
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-semibold text-primary">{method.title}</h3>
+                        <p className="text-muted text-sm">{method.value}</p>
+                        <p className="text-subtle text-xs">{method.description}</p>
+                      </div>
+                      <div className="text-muted">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </div>
+                    </a>
+                  ))}
                 </div>
               </div>
 
               {/* Availability */}
               <div className="card">
-                <div className="card-content">
-                  <h2 className="text-h2 text-gray-900 mb-6">Availability</h2>
-                  
-                  <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3">
-                        <div className="status-dot"></div>
-                        <span className="font-medium text-gray-900">Currently Available</span>
-                      </div>
-                      <div className="text-small text-gray-600 space-y-1">
-                        <p>• Full-time opportunities</p>
-                        <p>• Freelance projects</p>
-                        <p>• Research collaborations</p>
-                        <p>• Technical consultations</p>
-                      </div>
-                      <div className="pt-2 border-t border-gray-200">
-                        <p className="text-caption text-muted">
-                          Response time: Usually within 24 hours
-                        </p>
-                      </div>
+                <h2 className="text-primary mb-6">Availability</h2>
+                
+                <div className="bg-tertiary rounded-lg p-4 border">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="status-dot"></div>
+                      <span className="font-medium text-primary">Currently Available</span>
+                    </div>
+                    <div className="text-sm text-muted space-y-1">
+                      <p>• Full-time opportunities</p>
+                      <p>• Freelance projects</p>
+                      <p>• Research collaborations</p>
+                      <p>• Technical consultations</p>
+                    </div>
+                    <div className="pt-2 border-t border-muted">
+                      <p className="text-xs text-subtle">
+                        Response time: Usually within 24 hours
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -145,99 +141,96 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="card">
-              <div className="card-content">
-                <h2 className="text-h2 text-gray-900 mb-8">Send a Message</h2>
+              <h2 className="text-primary mb-8">Send a Message</h2>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="form-label">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="form-input"
-                      placeholder="Your full name"
-                    />
-                  </div>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="form-group">
+                  <label htmlFor="name" className="form-label">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="form-input"
+                    placeholder="Your full name"
+                  />
+                </div>
 
-                  <div>
-                    <label htmlFor="email" className="form-label">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="form-input"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
+                <div className="form-group">
+                  <label htmlFor="email" className="form-label">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="form-input"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
 
-                  <div>
-                    <label htmlFor="message" className="form-label">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows="6"
-                      className="form-input resize-none"
-                      placeholder="Tell me about your project or just say hello!"
-                    ></textarea>
-                  </div>
+                <div className="form-group">
+                  <label htmlFor="message" className="form-label">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="form-textarea"
+                    placeholder="Tell me about your project or just say hello!"
+                  ></textarea>
+                </div>
 
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className={`btn btn-primary w-full ${
-                      isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
-                    }`}
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                        </svg>
-                        Send Message
-                      </>
-                    )}
-                  </button>
-
-                  {submitStatus === 'success' && (
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-green-700 text-center">
-                      <p className="font-medium">Message sent successfully!</p>
-                      <p className="text-small">I'll get back to you soon.</p>
-                    </div>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`btn btn-primary w-full ${
+                    isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                  }`}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                      </svg>
+                      Send Message
+                    </>
                   )}
-                </form>
-              </div>
+                </button>
+
+                {submitStatus === 'success' && (
+                  <div className="bg-tertiary border border-accent rounded-lg p-4 text-accent text-center">
+                    <p className="font-medium">Message sent successfully!</p>
+                    <p className="text-sm text-muted">I'll get back to you soon.</p>
+                  </div>
+                )}
+              </form>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="section bg-subtle">
+      <section className="section bg-secondary">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-h2 text-gray-900 mb-4">Ready to start a project?</h2>
-            <p className="text-muted mb-8">
+            <h2 className="text-primary mb-4">Ready to start a project?</h2>
+            <p className="text-muted mb-8 leading-relaxed">
               Whether you have a specific project in mind or just want to explore possibilities, 
               I'm here to help turn your ideas into reality.
             </p>
@@ -246,6 +239,9 @@ const Contact = () => {
                 href="https://calendly.com/your-link"
                 className="btn btn-primary"
               >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h4a2 2 0 012 2v1M8 7h8m-8 0v10a2 2 0 002 2h4a2 2 0 002-2V7M8 7H6a2 2 0 00-2 2v8a2 2 0 002 2h2m8-12h2a2 2 0 012 2v8a2 2 0 01-2 2h-2" />
+                </svg>
                 Schedule a Call
               </a>
               <a
@@ -254,6 +250,9 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="btn btn-secondary"
               >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
                 View Resume
               </a>
             </div>

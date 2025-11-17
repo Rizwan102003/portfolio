@@ -3,8 +3,8 @@ import React from 'react';
 const SkillBar = ({ skill, percentage, delay }) => (
   <div className="mb-6">
     <div className="flex justify-between mb-2">
-      <span className="text-small font-medium text-gray-700">{skill}</span>
-      <span className="text-small text-muted font-mono">{percentage}%</span>
+      <span className="text-sm font-medium text-primary">{skill}</span>
+      <span className="text-sm text-muted font-mono">{percentage}%</span>
     </div>
     <div className="progress-bar">
       <div
@@ -55,14 +55,29 @@ const About = () => {
     }
   ];
 
+  const techStack = [
+    { name: 'Python', category: 'Language' },
+    { name: 'Java', category: 'Language' },
+    { name: 'Golang', category: 'Language' },
+    { name: 'React', category: 'Frontend' },
+    { name: 'AWS', category: 'Cloud' },
+    { name: 'Docker', category: 'DevOps' },
+    { name: 'PostgreSQL', category: 'Database' },
+    { name: 'Git', category: 'Tools' },
+    { name: 'Linux', category: 'OS' },
+    { name: 'Kubernetes', category: 'DevOps' },
+    { name: 'TensorFlow', category: 'ML' },
+    { name: 'Spring Boot', category: 'Framework' },
+  ];
+
   return (
-    <div className="min-h-screen bg-white pt-24">
+    <div className="min-h-screen bg-primary pt-24">
       {/* Header */}
       <section className="section">
         <div className="container">
           <div className="text-center mb-16">
-            <h1 className="text-h1 text-gray-900 mb-6">About Me</h1>
-            <p className="text-xl text-muted max-w-3xl mx-auto">
+            <h1 className="text-primary mb-6">About Me</h1>
+            <p className="text-lg text-muted max-w-3xl mx-auto">
               Engineering the future through code and innovation
             </p>
           </div>
@@ -70,69 +85,68 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Story Section */}
             <div className="card">
-              <div className="card-content">
-                <h2 className="text-h2 text-gray-900 mb-6">My Journey</h2>
-                
-                <div className="space-y-6 text-body text-gray-700">
-                  <div className="code-block">
-                    <div className="font-mono text-small">
-                      <div className="text-blue-400">const</div> <span className="text-yellow-300">developer</span> = {'{'}
-                      <div className="ml-4">
-                        <span className="text-green-400">name:</span> <span className="text-orange-300">"Sk Md Rizwan"</span>,<br/>
-                        <span className="text-green-400">education:</span> <span className="text-orange-300">"B.Tech ECE"</span>,<br/>
-                        <span className="text-green-400">gpa:</span> <span className="text-purple-300">7.3</span>,<br/>
-                        <span className="text-green-400">passion:</span> <span className="text-orange-300">"Problem Solving"</span>
-                      </div>
-                      {'};'}
+              <h2 className="text-primary mb-6">My Journey</h2>
+              
+              <div className="space-y-6 text-secondary">
+                <div className="code-block">
+                  <div className="font-mono text-sm">
+                    <div className="text-accent">const</div> <span className="text-primary">developer</span> = {'{'}
+                    <div className="ml-4 text-muted">
+                      <span className="text-accent">name:</span> <span className="text-primary">"Sk Md Rizwan"</span>,<br/>
+                      <span className="text-accent">education:</span> <span className="text-primary">"B.Tech ECE"</span>,<br/>
+                      <span className="text-accent">gpa:</span> <span className="text-primary">7.3</span>,<br/>
+                      <span className="text-accent">passion:</span> <span className="text-primary">"Problem Solving"</span>
                     </div>
+                    {'};'}
                   </div>
-
-                  <p>
-                    I'm a third-year <strong>Electronics & Communication Engineering</strong> student 
-                    from Heritage Institute of Technology, Kolkata, with a strong foundation in both 
-                    hardware and software domains.
-                  </p>
-
-                  <p>
-                    My expertise spans across <strong>Data Science</strong>, 
-                    <strong> Backend Development</strong>, 
-                    <strong> Cloud Computing</strong>, and 
-                    <strong> DevOps</strong> - building scalable, 
-                    intelligent systems that make a real impact.
-                  </p>
-
-                  <p>
-                    Currently architecting innovative solutions including an 
-                    <strong> AI-powered farming ecosystem</strong>, 
-                    a <strong>dynamic CMS with live schema editing</strong>, 
-                    and a <strong>comprehensive hiring platform</strong> 
-                    for the security industry.
-                  </p>
                 </div>
+
+                <p>
+                  I'm a third-year <strong className="text-primary">Electronics & Communication Engineering</strong> student 
+                  from Heritage Institute of Technology, Kolkata, with a strong foundation in both 
+                  hardware and software domains.
+                </p>
+
+                <p>
+                  My expertise spans across <strong className="text-primary">Data Science</strong>, 
+                  <strong className="text-primary"> Backend Development</strong>, 
+                  <strong className="text-primary"> Cloud Computing</strong>, and 
+                  <strong className="text-primary"> DevOps</strong> - building scalable, 
+                  intelligent systems that make a real impact.
+                </p>
+
+                <p>
+                  Currently architecting innovative solutions including an 
+                  <strong className="text-primary"> AI-powered farming ecosystem</strong>, 
+                  a <strong className="text-primary">dynamic CMS with live schema editing</strong>, 
+                  and a <strong className="text-primary">comprehensive hiring platform</strong> 
+                  for the security industry.
+                </p>
               </div>
             </div>
 
             {/* Skills Section */}
             <div className="card">
-              <div className="card-content">
-                <h2 className="text-h2 text-gray-900 mb-8">Technical Skills</h2>
-                
-                <div className="space-y-4">
-                  {skills.map((skill, index) => (
-                    <SkillBar
-                      key={index}
-                      skill={skill.name}
-                      percentage={skill.percentage}
-                      delay={skill.delay}
-                    />
-                  ))}
-                </div>
+              <h2 className="text-primary mb-8">Technical Skills</h2>
+              
+              <div className="space-y-4">
+                {skills.map((skill, index) => (
+                  <SkillBar
+                    key={index}
+                    skill={skill.name}
+                    percentage={skill.percentage}
+                    delay={skill.delay}
+                  />
+                ))}
+              </div>
 
-                <div className="mt-8 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                  <p className="text-small text-muted font-mono mb-2">
-                    Status: Continuously learning and evolving...
-                  </p>
-                </div>
+              <div className="mt-8 p-4 bg-tertiary rounded-lg border">
+                <p className="text-sm text-muted font-mono mb-2">
+                  <span className="text-accent">$</span> status --learning
+                </p>
+                <p className="text-sm text-muted">
+                  Continuously learning and evolving...
+                </p>
               </div>
             </div>
           </div>
@@ -140,24 +154,22 @@ const About = () => {
       </section>
 
       {/* Achievements Section */}
-      <section className="section bg-subtle">
+      <section className="section bg-secondary">
         <div className="container">
-          <h2 className="text-h2 text-gray-900 text-center mb-12">Achievements</h2>
+          <h2 className="text-primary text-center mb-12">Achievements</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {achievements.map((achievement, index) => (
               <div key={index} className="card text-center">
-                <div className="card-content">
-                  <div className="text-4xl mb-4">{achievement.icon}</div>
-                  <h3 className="text-h3 text-gray-900 mb-3">
-                    {achievement.title}
-                  </h3>
-                  <p className="text-muted text-small mb-3">
-                    {achievement.description}
-                  </p>
-                  <div className="badge">
-                    {achievement.year}
-                  </div>
+                <div className="text-4xl mb-4">{achievement.icon}</div>
+                <h3 className="text-primary font-semibold mb-3">
+                  {achievement.title}
+                </h3>
+                <p className="text-muted text-sm mb-3 leading-relaxed">
+                  {achievement.description}
+                </p>
+                <div className="badge badge-accent">
+                  {achievement.year}
                 </div>
               </div>
             ))}
@@ -168,29 +180,30 @@ const About = () => {
       {/* Tech Stack */}
       <section className="section">
         <div className="container">
-          <h2 className="text-h2 text-gray-900 text-center mb-12">Technology Stack</h2>
+          <h2 className="text-primary text-center mb-12">Technology Stack</h2>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            {[
-              { name: 'Python', icon: '🐍' },
-              { name: 'Java', icon: '☕' },
-              { name: 'Golang', icon: '🔷' },
-              { name: 'React', icon: '⚛️' },
-              { name: 'AWS', icon: '☁️' },
-              { name: 'Docker', icon: '🐳' },
-              { name: 'PostgreSQL', icon: '🐘' },
-              { name: 'Git', icon: '📝' },
-              { name: 'Linux', icon: '🐧' },
-              { name: 'Kubernetes', icon: '⚙️' },
-              { name: 'TensorFlow', icon: '🧠' },
-              { name: 'Spring Boot', icon: '🍃' },
-            ].map((tech, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {techStack.map((tech, index) => (
               <div
                 key={index}
-                className="card text-center p-6 hover:shadow-md transition-all duration-200"
+                className="card card-compact text-center hover:border-accent transition-all"
               >
-                <div className="text-3xl mb-2">{tech.icon}</div>
-                <div className="text-small font-medium text-gray-700">{tech.name}</div>
+                <div className="text-2xl mb-2">
+                  {tech.name === 'Python' && '🐍'}
+                  {tech.name === 'Java' && '☕'}
+                  {tech.name === 'Golang' && '🔷'}
+                  {tech.name === 'React' && '⚛️'}
+                  {tech.name === 'AWS' && '☁️'}
+                  {tech.name === 'Docker' && '🐳'}
+                  {tech.name === 'PostgreSQL' && '🐘'}
+                  {tech.name === 'Git' && '📝'}
+                  {tech.name === 'Linux' && '🐧'}
+                  {tech.name === 'Kubernetes' && '⚙️'}
+                  {tech.name === 'TensorFlow' && '🧠'}
+                  {tech.name === 'Spring Boot' && '🍃'}
+                </div>
+                <div className="text-sm font-medium text-primary">{tech.name}</div>
+                <div className="text-xs text-muted">{tech.category}</div>
               </div>
             ))}
           </div>
@@ -198,36 +211,32 @@ const About = () => {
       </section>
 
       {/* Personal Info */}
-      <section className="section bg-subtle">
+      <section className="section bg-secondary">
         <div className="container">
           <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="card">
-                <div className="card-content text-center">
-                  <h3 className="text-h3 text-gray-900 mb-4">Education</h3>
-                  <p className="text-muted mb-2">B.Tech ECE</p>
-                  <p className="text-small text-gray-600">Heritage Institute of Technology</p>
-                  <p className="text-small text-gray-500">GPA: 7.3/10</p>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="card text-center">
+                <h3 className="text-primary font-semibold mb-4">Education</h3>
+                <p className="text-muted mb-2">B.Tech ECE</p>
+                <p className="text-sm text-subtle">Heritage Institute of Technology</p>
+                <p className="text-sm text-subtle">GPA: 7.3/10</p>
+              </div>
+              
+              <div className="card text-center">
+                <h3 className="text-primary font-semibold mb-4">Location</h3>
+                <p className="text-muted mb-2">Kolkata, India</p>
+                <p className="text-sm text-subtle">Open to Remote Work</p>
+                <div className="flex items-center justify-center gap-2 mt-2">
+                  <div className="status-dot"></div>
+                  <span className="text-sm text-muted">Available</span>
                 </div>
               </div>
-              <div className="card">
-                <div className="card-content text-center">
-                  <h3 className="text-h3 text-gray-900 mb-4">Location</h3>
-                  <p className="text-muted mb-2">Kolkata, India</p>
-                  <p className="text-small text-gray-600">Open to Remote Work</p>
-                  <div className="flex items-center justify-center gap-2 mt-2">
-                    <div className="status-dot"></div>
-                    <span className="text-small">Available</span>
-                  </div>
-                </div>
-              </div>
-              <div className="card">
-                <div className="card-content text-center">
-                  <h3 className="text-h3 text-gray-900 mb-4">Interests</h3>
-                  <p className="text-muted mb-2">AI/ML Research</p>
-                  <p className="text-small text-gray-600">Cloud Architecture</p>
-                  <p className="text-small text-gray-500">Open Source</p>
-                </div>
+              
+              <div className="card text-center">
+                <h3 className="text-primary font-semibold mb-4">Interests</h3>
+                <p className="text-muted mb-2">AI/ML Research</p>
+                <p className="text-sm text-subtle">Cloud Architecture</p>
+                <p className="text-sm text-subtle">Open Source</p>
               </div>
             </div>
           </div>
