@@ -3,12 +3,12 @@ import React from 'react';
 const SkillBar = ({ skill, percentage, delay }) => (
   <div className="mb-6">
     <div className="flex justify-between mb-2">
-      <span className="text-blue-100 font-medium mono-font">{skill}</span>
-      <span className="text-cyan-400 mono-font">{percentage}%</span>
+      <span className="text-small font-medium text-gray-700">{skill}</span>
+      <span className="text-small text-muted font-mono">{percentage}%</span>
     </div>
-    <div className="w-full bg-gray-800/50 rounded-full h-3 border border-blue-500/30">
+    <div className="progress-bar">
       <div
-        className="skill-bar h-3 rounded-full"
+        className="progress-fill"
         style={{
           width: `${percentage}%`,
           animationDelay: `${delay}s`
@@ -33,215 +33,206 @@ const About = () => {
       icon: '🏆',
       title: 'IBM Data Science Certification',
       description: 'Professional certification in Data Science and Machine Learning',
-      tech: 'Python • ML • Analytics'
+      year: '2023'
     },
     {
       icon: '☁️',
       title: 'AWS Cloud Practitioner',
       description: 'Certified in Amazon Web Services cloud computing',
-      tech: 'AWS • Cloud • Infrastructure'
+      year: '2023'
     },
     {
       icon: '🤖',
       title: 'Salesforce AI Associate',
       description: 'Specialized in AI and automation solutions',
-      tech: 'AI • Automation • CRM'
+      year: '2023'
     },
     {
       icon: '🎓',
       title: 'ECE Engineering',
       description: 'B.Tech in Electronics & Communication from Heritage Institute',
-      tech: 'Electronics • Communication • Systems'
+      year: '2021-2025'
     }
   ];
 
   return (
-    <div className="min-h-screen tech-bg pt-24 pb-12">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-6 tech-font">
-            <span className="text-cyan-400">&lt;</span>
-            <span className="gradient-text">About</span>
-            <span className="text-cyan-400">/&gt;</span>
-          </h2>
-          <p className="text-xl text-blue-200 max-w-3xl mx-auto mono-font">
-            <span className="text-cyan-400">// </span>
-            Engineering the future through code and innovation
-          </p>
-        </div>
+    <div className="min-h-screen bg-white pt-24">
+      {/* Header */}
+      <section className="section">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h1 className="text-h1 text-gray-900 mb-6">About Me</h1>
+            <p className="text-xl text-muted max-w-3xl mx-auto">
+              Engineering the future through code and innovation
+            </p>
+          </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Story Section */}
-          <div className="glass rounded-3xl p-8 card-hover border border-blue-500/30">
-            <h3 className="text-3xl font-bold text-white mb-6 flex items-center tech-font">
-              <span className="mr-3 text-cyan-400">{'{'}</span>
-              <span className="gradient-text">Journey</span>
-              <span className="ml-3 text-cyan-400">{'}'}</span>
-            </h3>
-            
-            <div className="space-y-6 text-blue-100 text-lg leading-relaxed">
-              <div className="code-block p-4 rounded-lg">
-                <p className="mono-font text-sm">
-                  <span className="text-cyan-400">const</span> <span className="text-yellow-300">developer</span> = {'{'}
-                </p>
-                <p className="mono-font text-sm ml-4">
-                  <span className="text-blue-300">name:</span> <span className="text-green-300">"Sk Md Rizwan"</span>,
-                </p>
-                <p className="mono-font text-sm ml-4">
-                  <span className="text-blue-300">education:</span> <span className="text-green-300">"B.Tech ECE"</span>,
-                </p>
-                <p className="mono-font text-sm ml-4">
-                  <span className="text-blue-300">gpa:</span> <span className="text-orange-300">7.3</span>,
-                </p>
-                <p className="mono-font text-sm ml-4">
-                  <span className="text-blue-300">passion:</span> <span className="text-green-300">"Problem Solving"</span>
-                </p>
-                <p className="mono-font text-sm">{'};'}</p>
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Story Section */}
+            <div className="card">
+              <div className="card-content">
+                <h2 className="text-h2 text-gray-900 mb-6">My Journey</h2>
+                
+                <div className="space-y-6 text-body text-gray-700">
+                  <div className="code-block">
+                    <div className="font-mono text-small">
+                      <div className="text-blue-400">const</div> <span className="text-yellow-300">developer</span> = {'{'}
+                      <div className="ml-4">
+                        <span className="text-green-400">name:</span> <span className="text-orange-300">"Sk Md Rizwan"</span>,<br/>
+                        <span className="text-green-400">education:</span> <span className="text-orange-300">"B.Tech ECE"</span>,<br/>
+                        <span className="text-green-400">gpa:</span> <span className="text-purple-300">7.3</span>,<br/>
+                        <span className="text-green-400">passion:</span> <span className="text-orange-300">"Problem Solving"</span>
+                      </div>
+                      {'};'}
+                    </div>
+                  </div>
+
+                  <p>
+                    I'm a third-year <strong>Electronics & Communication Engineering</strong> student 
+                    from Heritage Institute of Technology, Kolkata, with a strong foundation in both 
+                    hardware and software domains.
+                  </p>
+
+                  <p>
+                    My expertise spans across <strong>Data Science</strong>, 
+                    <strong> Backend Development</strong>, 
+                    <strong> Cloud Computing</strong>, and 
+                    <strong> DevOps</strong> - building scalable, 
+                    intelligent systems that make a real impact.
+                  </p>
+
+                  <p>
+                    Currently architecting innovative solutions including an 
+                    <strong> AI-powered farming ecosystem</strong>, 
+                    a <strong>dynamic CMS with live schema editing</strong>, 
+                    and a <strong>comprehensive hiring platform</strong> 
+                    for the security industry.
+                  </p>
+                </div>
               </div>
-
-              <p>
-                I'm a third-year <span className="font-semibold text-cyan-300">Electronics & Communication Engineering</span> student 
-                from Heritage Institute of Technology, Kolkata, with a strong foundation in both 
-                <span className="font-semibold text-blue-300"> hardware and software</span> domains.
-              </p>
-
-              <p>
-                My expertise spans across <span className="font-semibold text-green-300">Data Science</span>, 
-                <span className="font-semibold text-yellow-300"> Backend Development</span>, 
-                <span className="font-semibold text-purple-300"> Cloud Computing</span>, and 
-                <span className="font-semibold text-red-300"> DevOps</span> - building scalable, 
-                intelligent systems that make a real impact.
-              </p>
-
-              <p>
-                Currently architecting innovative solutions including an 
-                <span className="font-semibold text-cyan-300"> AI-powered farming ecosystem</span>, 
-                a <span className="font-semibold text-blue-300">dynamic CMS with live schema editing</span>, 
-                and a <span className="font-semibold text-green-300">comprehensive hiring platform</span> 
-                for the security industry.
-              </p>
-            </div>
-          </div>
-
-          {/* Skills Section */}
-          <div className="glass rounded-3xl p-8 card-hover border border-blue-500/30">
-            <h3 className="text-3xl font-bold text-white mb-8 flex items-center tech-font">
-              <span className="mr-3 text-cyan-400">⚡</span>
-              <span className="gradient-text">Skills</span>
-              <span className="ml-3 text-cyan-400">.exe</span>
-            </h3>
-            
-            <div className="space-y-4">
-              {skills.map((skill, index) => (
-                <SkillBar
-                  key={index}
-                  skill={skill.name}
-                  percentage={skill.percentage}
-                  delay={skill.delay}
-                />
-              ))}
             </div>
 
-            <div className="mt-8 p-4 bg-gray-900/50 rounded-lg border border-cyan-400/30">
-              <p className="text-cyan-400 mono-font text-sm mb-2">
-                $ cat /proc/skills
-              </p>
-              <p className="text-blue-200 mono-font text-xs">
-                Status: Continuously learning and evolving...
-              </p>
+            {/* Skills Section */}
+            <div className="card">
+              <div className="card-content">
+                <h2 className="text-h2 text-gray-900 mb-8">Technical Skills</h2>
+                
+                <div className="space-y-4">
+                  {skills.map((skill, index) => (
+                    <SkillBar
+                      key={index}
+                      skill={skill.name}
+                      percentage={skill.percentage}
+                      delay={skill.delay}
+                    />
+                  ))}
+                </div>
+
+                <div className="mt-8 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                  <p className="text-small text-muted font-mono mb-2">
+                    Status: Continuously learning and evolving...
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Achievements Section */}
-        <div className="mt-16">
-          <h3 className="text-4xl font-bold text-white text-center mb-12 tech-font">
-            <span className="text-cyan-400">[</span>
-            <span className="gradient-text">Achievements</span>
-            <span className="text-cyan-400">]</span>
-          </h3>
+      {/* Achievements Section */}
+      <section className="section bg-subtle">
+        <div className="container">
+          <h2 className="text-h2 text-gray-900 text-center mb-12">Achievements</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {achievements.map((achievement, index) => (
-              <div
-                key={index}
-                className="glass rounded-2xl p-6 text-center card-hover border border-blue-500/30"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="text-4xl mb-4">{achievement.icon}</div>
-                <h4 className="text-lg font-bold text-white mb-3 tech-font">
-                  {achievement.title}
-                </h4>
-                <p className="text-blue-200 text-sm mb-3">
-                  {achievement.description}
-                </p>
-                <div className="text-xs text-cyan-400 mono-font bg-gray-900/50 rounded px-2 py-1">
-                  {achievement.tech}
+              <div key={index} className="card text-center">
+                <div className="card-content">
+                  <div className="text-4xl mb-4">{achievement.icon}</div>
+                  <h3 className="text-h3 text-gray-900 mb-3">
+                    {achievement.title}
+                  </h3>
+                  <p className="text-muted text-small mb-3">
+                    {achievement.description}
+                  </p>
+                  <div className="badge">
+                    {achievement.year}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Tech Stack */}
-        <div className="mt-16 glass rounded-3xl p-8 border border-blue-500/30">
-          <h3 className="text-3xl font-bold text-white text-center mb-8 tech-font">
-            <span className="text-cyan-400">&lt;</span>
-            <span className="gradient-text">TechStack</span>
-            <span className="text-cyan-400">/&gt;</span>
-          </h3>
+      {/* Tech Stack */}
+      <section className="section">
+        <div className="container">
+          <h2 className="text-h2 text-gray-900 text-center mb-12">Technology Stack</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {[
-              { name: 'Python', color: 'from-yellow-400 to-yellow-600', icon: '🐍' },
-              { name: 'Java', color: 'from-red-500 to-red-700', icon: '☕' },
-              { name: 'Golang', color: 'from-blue-400 to-blue-600', icon: '🔷' },
-              { name: 'React', color: 'from-cyan-400 to-cyan-600', icon: '⚛️' },
-              { name: 'AWS', color: 'from-orange-400 to-orange-600', icon: '☁️' },
-              { name: 'Docker', color: 'from-blue-500 to-blue-700', icon: '🐳' },
-              { name: 'PostgreSQL', color: 'from-indigo-400 to-indigo-600', icon: '🐘' },
-              { name: 'Git', color: 'from-gray-400 to-gray-600', icon: '📝' },
-              { name: 'Linux', color: 'from-green-400 to-green-600', icon: '🐧' },
-              { name: 'Kubernetes', color: 'from-purple-400 to-purple-600', icon: '⚙️' },
-              { name: 'TensorFlow', color: 'from-orange-500 to-orange-700', icon: '🧠' },
-              { name: 'Spring Boot', color: 'from-green-500 to-green-700', icon: '🍃' },
+              { name: 'Python', icon: '🐍' },
+              { name: 'Java', icon: '☕' },
+              { name: 'Golang', icon: '🔷' },
+              { name: 'React', icon: '⚛️' },
+              { name: 'AWS', icon: '☁️' },
+              { name: 'Docker', icon: '🐳' },
+              { name: 'PostgreSQL', icon: '🐘' },
+              { name: 'Git', icon: '📝' },
+              { name: 'Linux', icon: '🐧' },
+              { name: 'Kubernetes', icon: '⚙️' },
+              { name: 'TensorFlow', icon: '🧠' },
+              { name: 'Spring Boot', icon: '🍃' },
             ].map((tech, index) => (
               <div
                 key={index}
-                className={`bg-gradient-to-r ${tech.color} rounded-xl p-4 text-center text-white font-semibold hover:scale-105 transition-all duration-300 shadow-lg border border-cyan-400/30 card-hover`}
+                className="card text-center p-6 hover:shadow-md transition-all duration-200"
               >
-                <div className="text-2xl mb-2">{tech.icon}</div>
-                <div className="text-sm mono-font">{tech.name}</div>
+                <div className="text-3xl mb-2">{tech.icon}</div>
+                <div className="text-small font-medium text-gray-700">{tech.name}</div>
               </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* System Info */}
-        <div className="mt-16 glass rounded-3xl p-8 border border-blue-500/30">
-          <h3 className="text-2xl font-bold text-cyan-400 mb-6 mono-font">
-            $ system --info
-          </h3>
-          <div className="grid md:grid-cols-3 gap-6 mono-font text-sm">
-            <div className="bg-gray-900/50 rounded-lg p-4 border border-cyan-400/30">
-              <p className="text-cyan-400 mb-2">OS: Developer v3.0</p>
-              <p className="text-blue-200">Kernel: Innovation-Engine</p>
-              <p className="text-blue-200">Shell: Problem-Solver</p>
-            </div>
-            <div className="bg-gray-900/50 rounded-lg p-4 border border-cyan-400/30">
-              <p className="text-cyan-400 mb-2">CPU: Multi-Core Learning</p>
-              <p className="text-blue-200">RAM: Unlimited Curiosity</p>
-              <p className="text-blue-200">Storage: Growing Knowledge</p>
-            </div>
-            <div className="bg-gray-900/50 rounded-lg p-4 border border-cyan-400/30">
-              <p className="text-cyan-400 mb-2">Network: Always Connected</p>
-              <p className="text-blue-200">Status: Ready to Code</p>
-              <p className="text-green-400">Uptime: 24/7 Learning</p>
+      {/* Personal Info */}
+      <section className="section bg-subtle">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="card">
+                <div className="card-content text-center">
+                  <h3 className="text-h3 text-gray-900 mb-4">Education</h3>
+                  <p className="text-muted mb-2">B.Tech ECE</p>
+                  <p className="text-small text-gray-600">Heritage Institute of Technology</p>
+                  <p className="text-small text-gray-500">GPA: 7.3/10</p>
+                </div>
+              </div>
+              <div className="card">
+                <div className="card-content text-center">
+                  <h3 className="text-h3 text-gray-900 mb-4">Location</h3>
+                  <p className="text-muted mb-2">Kolkata, India</p>
+                  <p className="text-small text-gray-600">Open to Remote Work</p>
+                  <div className="flex items-center justify-center gap-2 mt-2">
+                    <div className="status-dot"></div>
+                    <span className="text-small">Available</span>
+                  </div>
+                </div>
+              </div>
+              <div className="card">
+                <div className="card-content text-center">
+                  <h3 className="text-h3 text-gray-900 mb-4">Interests</h3>
+                  <p className="text-muted mb-2">AI/ML Research</p>
+                  <p className="text-small text-gray-600">Cloud Architecture</p>
+                  <p className="text-small text-gray-500">Open Source</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
