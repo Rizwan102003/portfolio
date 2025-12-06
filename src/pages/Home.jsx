@@ -59,29 +59,29 @@ const Home = () => {
       {/* Hero Section */}
       <section className="section pt-24">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-4xl mx-auto text-center">
             {/* Content */}
-            <div className="animate-fade-in">
+            <div className="animate-fade-in mb-16">
               <div className="mb-8">
-                <div className="inline-flex items-center gap-2 bg-tertiary border rounded-lg px-3 py-2 text-sm font-medium mb-6">
+                <div className="inline-flex items-center gap-2 bg-tertiary border rounded-lg px-3 py-2 text-sm font-medium mb-8">
                   <div className="status-dot"></div>
                   <span className="text-muted">Available for work</span>
                 </div>
                 
-                <h1 className="text-primary mb-4">
+                <h1 className="text-primary mb-6 text-center">
                   Hi, I'm <span className="text-accent">Rizwan</span>
-                  <span className="block text-accent font-mono text-lg mt-2">
+                  <span className="block text-accent font-mono text-xl mt-4">
                     {typedText}<span className="animate-pulse">|</span>
                   </span>
                 </h1>
                 
-                <p className="text-secondary text-lg mb-8 max-w-lg leading-relaxed">
+                <p className="text-secondary text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
                   Passionate about solving real-world problems through innovative software solutions. 
                   Specializing in backend systems, AI/ML, and cloud infrastructure.
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                 <Link to="/projects" className="btn btn-primary">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -97,7 +97,7 @@ const Home = () => {
               </div>
 
               {/* Quick Stats */}
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-3 gap-8 max-w-md mx-auto">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-1">15+</div>
                   <div className="text-sm text-muted">Projects</div>
@@ -109,21 +109,6 @@ const Home = () => {
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary mb-1">8+</div>
                   <div className="text-sm text-muted">Technologies</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Profile Image */}
-            <div className="flex justify-center lg:justify-end animate-fade-in">
-              <div className="relative">
-                <div className="w-80 h-80 bg-secondary border rounded-2xl flex items-center justify-center">
-                  <div className="text-6xl">👨‍💻</div>
-                </div>
-                <div className="absolute -bottom-4 -right-4 bg-secondary border rounded-xl p-4">
-                  <div className="flex items-center gap-2">
-                    <div className="status-dot"></div>
-                    <span className="text-sm font-medium text-muted">Online</span>
-                  </div>
                 </div>
               </div>
             </div>
