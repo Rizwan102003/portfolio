@@ -75,16 +75,16 @@ const About = () => {
       {/* Header */}
       <section className="section">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h1 className="text-primary mb-6">About Me</h1>
             <p className="text-lg text-muted max-w-3xl mx-auto">
               Engineering the future through code and innovation
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="max-w-4xl mx-auto">
             {/* Story Section */}
-            <div className="card">
+            <div className="card mb-12">
               <h2 className="text-primary mb-6">My Journey</h2>
               
               <div className="space-y-6 text-secondary">
@@ -124,8 +124,8 @@ const About = () => {
                 </p>
               </div>
             </div>
-
-            {/* Skills Section */}
+            
+            {/* Skills Section - Now full width */}
             <div className="card">
               <h2 className="text-primary mb-8">Technical Skills</h2>
               

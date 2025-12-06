@@ -73,14 +73,14 @@ const Contact = () => {
       {/* Header */}
       <section className="section">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h1 className="text-primary mb-6">Get in Touch</h1>
             <p className="text-lg text-muted max-w-3xl mx-auto">
               Let's discuss your project and how we can work together to bring your ideas to life
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
             {/* Contact Information */}
             <div className="space-y-8">
               <div className="card">

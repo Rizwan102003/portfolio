@@ -84,7 +84,7 @@ const Projects = () => {
       {/* Header */}
       <section className="section">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h1 className="text-primary mb-6">Projects</h1>
             <p className="text-lg text-muted max-w-3xl mx-auto">
               A collection of projects showcasing my technical skills and problem-solving approach
@@ -92,7 +92,7 @@ const Projects = () => {
           </div>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
             {categories.map((category) => (
               <button
                 key={category}
@@ -109,7 +109,7 @@ const Projects = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project, index) => (
               <div key={index} className="card">
                 {/* Header */}

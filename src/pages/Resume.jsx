@@ -79,7 +79,7 @@ const Resume = () => {
       {/* Header */}
       <section className="section">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h1 className="text-primary mb-6">Resume</h1>
             <p className="text-lg text-muted max-w-3xl mx-auto mb-8">
               Comprehensive overview of my skills, experience, and achievements
@@ -99,7 +99,7 @@ const Resume = () => {
             </a>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-8">
             {/* Left Column */}
             <div className="lg:col-span-2 space-y-8">
               {/* Experience Section */}
