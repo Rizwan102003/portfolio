@@ -1,31 +1,14 @@
 import React from 'react';
-
-const SkillBar = ({ skill, percentage, delay }) => (
-  <div className="mb-6">
-    <div className="flex justify-between mb-2">
-      <span className="text-sm font-medium text-primary">{skill}</span>
-      <span className="text-sm text-muted font-mono">{percentage}%</span>
-    </div>
-    <div className="progress-bar">
-      <div
-        className="progress-fill"
-        style={{
-          width: `${percentage}%`,
-          animationDelay: `${delay}s`
-        }}
-      ></div>
-    </div>
-  </div>
-);
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const skills = [
-    { name: 'Python & Data Science', percentage: 90, delay: 0.2 },
-    { name: 'Java & Spring Boot', percentage: 85, delay: 0.4 },
-    { name: 'Golang', percentage: 80, delay: 0.6 },
-    { name: 'Cloud & DevOps', percentage: 75, delay: 0.8 },
-    { name: 'React & Frontend', percentage: 85, delay: 1.0 },
-    { name: 'Database Design', percentage: 80, delay: 1.2 },
+    { name: 'Backend Development', level: 90, description: 'Java, Spring Boot, microservices' },
+    { name: 'Data Science & ML', level: 85, description: 'Python, TensorFlow, data pipelines' },
+    { name: 'Cloud & DevOps', level: 80, description: 'AWS, Docker, Kubernetes, Terraform' },
+    { name: 'Database Systems', level: 85, description: 'PostgreSQL, MongoDB, Redis' },
+    { name: 'Frontend Development', level: 75, description: 'React, JavaScript, responsive design' },
+    { name: 'System Design', level: 80, description: 'Distributed systems, scalability' }
   ];
 
   const achievements = [
@@ -48,200 +31,284 @@ const About = () => {
       year: '2023'
     },
     {
-      icon: '🎓',
-      title: 'ECE Engineering',
-      description: 'B.Tech in Electronics & Communication from Heritage Institute',
-      year: '2021-2025'
+      icon: '📊',
+      title: 'High-Impact Projects',
+      description: 'Built systems processing 10M+ events daily',
+      year: '2023-24'
     }
   ];
 
-  const techStack = [
-    { name: 'Python', category: 'Language' },
-    { name: 'Java', category: 'Language' },
-    { name: 'Golang', category: 'Language' },
-    { name: 'React', category: 'Frontend' },
-    { name: 'AWS', category: 'Cloud' },
-    { name: 'Docker', category: 'DevOps' },
-    { name: 'PostgreSQL', category: 'Database' },
-    { name: 'Git', category: 'Tools' },
-    { name: 'Linux', category: 'OS' },
-    { name: 'Kubernetes', category: 'DevOps' },
-    { name: 'TensorFlow', category: 'ML' },
-    { name: 'Spring Boot', category: 'Framework' },
+  const timeline = [
+    {
+      year: '2021',
+      title: 'Started B.Tech ECE',
+      description: 'Began Electronics & Communication Engineering at Heritage Institute of Technology'
+    },
+    {
+      year: '2022',
+      title: 'Discovered Programming',
+      description: 'Started with Python and data structures, fell in love with problem-solving'
+    },
+    {
+      year: '2023',
+      title: 'First Major Project',
+      description: 'Built Smart Farming System with IoT and ML, achieving 35% accuracy improvement'
+    },
+    {
+      year: '2024',
+      title: 'Advanced Systems',
+      description: 'Developed distributed systems and cloud infrastructure, focusing on scalability'
+    },
+    {
+      year: '2025',
+      title: 'Ready for Industry',
+      description: 'Graduating with strong foundation in backend, ML, and cloud technologies'
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-primary pt-24">
-      {/* Header */}
-      <section className="section">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h1 className="text-primary mb-6">About Me</h1>
-            <p className="text-lg text-muted max-w-3xl mx-auto">
-              Engineering the future through code and innovation
-            </p>
+    <div>
+      <main id="main-content">
+        {/* Header */}
+        <section className="section">
+          <div className="container">
+            <div className="text-center mb-xl">
+              <h1 className="mb-md">About Me</h1>
+              <p className="text-muted" style={{ maxWidth: '600px', margin: '0 auto' }}>
+                Passionate about building scalable systems that solve real-world problems
+              </p>
+            </div>
           </div>
+        </section>
 
-          <div className="max-w-4xl mx-auto">
-            {/* Story Section */}
-            <div className="card mb-12">
-              <h2 className="text-primary mb-6">My Journey</h2>
-              
-              <div className="space-y-6 text-secondary">
-                <div className="code-block">
-                  <div className="font-mono text-sm">
-                    <div className="text-accent">const</div> <span className="text-primary">developer</span> = {'{'}
-                    <div className="ml-4 text-muted">
-                      <span className="text-accent">name:</span> <span className="text-primary">"Sk Md Rizwan"</span>,<br/>
-                      <span className="text-accent">education:</span> <span className="text-primary">"B.Tech ECE"</span>,<br/>
-                      <span className="text-accent">gpa:</span> <span className="text-primary">7.3</span>,<br/>
-                      <span className="text-accent">passion:</span> <span className="text-primary">"Problem Solving"</span>
-                    </div>
-                    {'};'}
+        {/* Introduction */}
+        <section className="section" style={{ backgroundColor: 'var(--color-surface)', paddingTop: 0 }}>
+          <div className="container">
+            <div className="card" style={{ maxWidth: '900px', margin: '0 auto' }}>
+              <div className="text-center mb-xl">
+                <h2 className="mb-lg">My Journey</h2>
+                
+                <div style={{ 
+                  padding: 'var(--space-lg)', 
+                  backgroundColor: 'var(--color-surface)', 
+                  borderRadius: 'var(--border-radius)', 
+                  border: '1px solid var(--color-border)',
+                  fontFamily: 'JetBrains Mono, monospace',
+                  fontSize: '14px',
+                  textAlign: 'left',
+                  marginBottom: 'var(--space-xl)'
+                }}>
+                  <div style={{ color: 'var(--color-secondary)' }}>const</div>
+                  <span style={{ color: 'var(--color-text)' }}> developer = {'{'}</span>
+                  <div style={{ marginLeft: 'var(--space-md)', color: 'var(--color-text-muted)' }}>
+                    <span style={{ color: 'var(--color-secondary)' }}>name:</span> 
+                    <span style={{ color: 'var(--color-primary)' }}> "Sk Md Rizwan"</span>,<br/>
+                    <span style={{ color: 'var(--color-secondary)' }}>education:</span> 
+                    <span style={{ color: 'var(--color-primary)' }}> "B.Tech ECE"</span>,<br/>
+                    <span style={{ color: 'var(--color-secondary)' }}>gpa:</span> 
+                    <span style={{ color: 'var(--color-primary)' }}> 7.3</span>,<br/>
+                    <span style={{ color: 'var(--color-secondary)' }}>passion:</span> 
+                    <span style={{ color: 'var(--color-primary)' }}> "Building Scalable Systems"</span>,<br/>
+                    <span style={{ color: 'var(--color-secondary)' }}>impact:</span> 
+                    <span style={{ color: 'var(--color-primary)' }}> "10M+ events processed daily"</span>
                   </div>
+                  <span style={{ color: 'var(--color-text)' }}>{'};'}</span>
                 </div>
+              </div>
 
-                <p>
-                  I'm a third-year <strong className="text-primary">Electronics & Communication Engineering</strong> student 
-                  from Heritage Institute of Technology, Kolkata, with a strong foundation in both 
-                  hardware and software domains.
+              <div style={{ fontSize: '18px', lineHeight: '1.6' }}>
+                <p className="mb-lg">
+                  I'm a final-year <strong>Electronics & Communication Engineering</strong> student 
+                  from Heritage Institute of Technology, Kolkata, with a passion for building 
+                  <strong> scalable backend systems</strong> and <strong>data-driven solutions</strong>.
+                </p>
+
+                <p className="mb-lg">
+                  My journey started with curiosity about how large-scale systems work. This led me to 
+                  dive deep into <strong>distributed systems</strong>, <strong>machine learning</strong>, 
+                  and <strong>cloud infrastructure</strong>. I've built systems that process millions of 
+                  events daily and deliver measurable business impact.
+                </p>
+
+                <p className="mb-lg">
+                  What excites me most is the intersection of <strong>engineering excellence</strong> and 
+                  <strong>real-world impact</strong>. Whether it's reducing processing time by 48% or 
+                  preventing $2.3M in fraudulent transactions, I focus on building solutions that matter.
                 </p>
 
                 <p>
-                  My expertise spans across <strong className="text-primary">Data Science</strong>, 
-                  <strong className="text-primary"> Backend Development</strong>, 
-                  <strong className="text-primary"> Cloud Computing</strong>, and 
-                  <strong className="text-primary"> DevOps</strong> - building scalable, 
-                  intelligent systems that make a real impact.
-                </p>
-
-                <p>
-                  Currently architecting innovative solutions including an 
-                  <strong className="text-primary"> AI-powered farming ecosystem</strong>, 
-                  a <strong className="text-primary">dynamic CMS with live schema editing</strong>, 
-                  and a <strong className="text-primary">comprehensive hiring platform</strong> 
-                  for the security industry.
+                  I'm actively seeking opportunities to contribute to <strong>high-scale systems</strong> 
+                  at companies like Google, where I can apply my skills in backend development, 
+                  data engineering, and cloud infrastructure to solve complex technical challenges.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Skills */}
+        <section className="section">
+          <div className="container">
+            <div className="text-center mb-xl">
+              <h2 className="mb-md">Technical Expertise</h2>
+              <p className="text-muted">
+                Skills developed through hands-on projects and real-world applications
+              </p>
             </div>
             
-            {/* Skills Section - Now full width */}
-            <div className="card">
-              <h2 className="text-primary mb-8">Technical Skills</h2>
-              
-              <div className="space-y-4">
+            <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+              <div className="grid gap-lg">
                 {skills.map((skill, index) => (
-                  <SkillBar
-                    key={index}
-                    skill={skill.name}
-                    percentage={skill.percentage}
-                    delay={skill.delay}
-                  />
+                  <div key={index} className="card">
+                    <div className="flex justify-between items-center mb-sm">
+                      <h3 className="text-small font-medium">{skill.name}</h3>
+                      <span className="text-xs text-muted font-mono">{skill.level}%</span>
+                    </div>
+                    <div style={{ 
+                      width: '100%', 
+                      height: '6px', 
+                      backgroundColor: 'var(--color-surface)', 
+                      borderRadius: '3px',
+                      overflow: 'hidden',
+                      marginBottom: 'var(--space-sm)'
+                    }}>
+                      <div
+                        style={{
+                          width: `${skill.level}%`,
+                          height: '100%',
+                          background: `linear-gradient(90deg, var(--color-primary), var(--color-secondary))`,
+                          borderRadius: '3px',
+                          transition: 'width 1s ease-out'
+                        }}
+                      ></div>
+                    </div>
+                    <p className="text-muted text-small">{skill.description}</p>
+                  </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
 
-              <div className="mt-8 p-4 bg-tertiary rounded-lg border">
-                <p className="text-sm text-muted font-mono mb-2">
-                  <span className="text-accent">$</span> status --learning
+        {/* Timeline */}
+        <section className="section" style={{ backgroundColor: 'var(--color-surface)' }}>
+          <div className="container">
+            <div className="text-center mb-xl">
+              <h2 className="mb-md">My Timeline</h2>
+              <p className="text-muted">
+                Key milestones in my technical journey
+              </p>
+            </div>
+            
+            <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+              <div className="experience-timeline">
+                {timeline.map((item, index) => (
+                  <div key={index} className="experience-item">
+                    <div className="flex justify-between items-center mb-sm">
+                      <h3 className="font-medium">{item.title}</h3>
+                      <span className="badge badge-primary">{item.year}</span>
+                    </div>
+                    <p className="text-muted">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Achievements */}
+        <section className="section">
+          <div className="container">
+            <div className="text-center mb-xl">
+              <h2 className="mb-md">Achievements & Certifications</h2>
+              <p className="text-muted">
+                Recognition and validation of technical skills
+              </p>
+            </div>
+            
+            <div className="grid grid-2" style={{ maxWidth: '800px', margin: '0 auto' }}>
+              {achievements.map((achievement, index) => (
+                <div key={index} className="card text-center">
+                  <div style={{ fontSize: '48px', marginBottom: 'var(--space-md)' }}>
+                    {achievement.icon}
+                  </div>
+                  <h3 className="mb-sm">{achievement.title}</h3>
+                  <p className="text-muted text-small mb-md">{achievement.description}</p>
+                  <span className="badge badge-secondary">{achievement.year}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Personal Info */}
+        <section className="section" style={{ backgroundColor: 'var(--color-surface)' }}>
+          <div className="container">
+            <div className="text-center mb-xl">
+              <h2 className="mb-md">Beyond Code</h2>
+              <p className="text-muted">
+                What drives me outside of technical work
+              </p>
+            </div>
+            
+            <div className="grid grid-3" style={{ maxWidth: '900px', margin: '0 auto' }}>
+              <div className="card text-center">
+                <h3 className="mb-md">🎯 Problem Solving</h3>
+                <p className="text-muted text-small">
+                  I love tackling complex algorithmic challenges and optimizing system performance. 
+                  Regular participant in coding competitions and hackathons.
                 </p>
-                <p className="text-sm text-muted">
-                  Continuously learning and evolving...
+              </div>
+              
+              <div className="card text-center">
+                <h3 className="mb-md">📚 Continuous Learning</h3>
+                <p className="text-muted text-small">
+                  Always exploring new technologies and best practices. Currently diving deep into 
+                  distributed systems design and advanced ML techniques.
+                </p>
+              </div>
+              
+              <div className="card text-center">
+                <h3 className="mb-md">🌱 Open Source</h3>
+                <p className="text-muted text-small">
+                  Contributing to open source projects and sharing knowledge with the developer community. 
+                  Believe in building tools that help others succeed.
                 </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Achievements Section */}
-      <section className="section bg-secondary">
-        <div className="container">
-          <h2 className="text-primary text-center mb-12">Achievements</h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {achievements.map((achievement, index) => (
-              <div key={index} className="card text-center">
-                <div className="text-4xl mb-4">{achievement.icon}</div>
-                <h3 className="text-primary font-semibold mb-3">
-                  {achievement.title}
-                </h3>
-                <p className="text-muted text-sm mb-3 leading-relaxed">
-                  {achievement.description}
-                </p>
-                <div className="badge badge-accent">
-                  {achievement.year}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tech Stack */}
-      <section className="section">
-        <div className="container">
-          <h2 className="text-primary text-center mb-12">Technology Stack</h2>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {techStack.map((tech, index) => (
-              <div
-                key={index}
-                className="card card-compact text-center hover:border-accent transition-all"
-              >
-                <div className="text-2xl mb-2">
-                  {tech.name === 'Python' && '🐍'}
-                  {tech.name === 'Java' && '☕'}
-                  {tech.name === 'Golang' && '🔷'}
-                  {tech.name === 'React' && '⚛️'}
-                  {tech.name === 'AWS' && '☁️'}
-                  {tech.name === 'Docker' && '🐳'}
-                  {tech.name === 'PostgreSQL' && '🐘'}
-                  {tech.name === 'Git' && '📝'}
-                  {tech.name === 'Linux' && '🐧'}
-                  {tech.name === 'Kubernetes' && '⚙️'}
-                  {tech.name === 'TensorFlow' && '🧠'}
-                  {tech.name === 'Spring Boot' && '🍃'}
-                </div>
-                <div className="text-sm font-medium text-primary">{tech.name}</div>
-                <div className="text-xs text-muted">{tech.category}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Personal Info */}
-      <section className="section bg-secondary">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="card text-center">
-                <h3 className="text-primary font-semibold mb-4">Education</h3>
-                <p className="text-muted mb-2">B.Tech ECE</p>
-                <p className="text-sm text-subtle">Heritage Institute of Technology</p>
-                <p className="text-sm text-subtle">GPA: 7.3/10</p>
-              </div>
-              
-              <div className="card text-center">
-                <h3 className="text-primary font-semibold mb-4">Location</h3>
-                <p className="text-muted mb-2">Kolkata, India</p>
-                <p className="text-sm text-subtle">Open to Remote Work</p>
-                <div className="flex items-center justify-center gap-2 mt-2">
-                  <div className="status-dot"></div>
-                  <span className="text-sm text-muted">Available</span>
-                </div>
-              </div>
-              
-              <div className="card text-center">
-                <h3 className="text-primary font-semibold mb-4">Interests</h3>
-                <p className="text-muted mb-2">AI/ML Research</p>
-                <p className="text-sm text-subtle">Cloud Architecture</p>
-                <p className="text-sm text-subtle">Open Source</p>
+        {/* CTA */}
+        <section className="section">
+          <div className="container">
+            <div className="text-center">
+              <h2 className="mb-md">Let's Build Something Amazing</h2>
+              <p className="text-muted mb-xl" style={{ maxWidth: '600px', margin: '0 auto 48px' }}>
+                I'm excited to bring my passion for scalable systems and data-driven solutions 
+                to your team. Let's discuss how I can contribute to your next big project.
+              </p>
+              <div className="flex justify-center gap-md">
+                <Link to="/contact" className="btn btn-primary">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                  Get In Touch
+                </Link>
+                <Link to="/projects" className="btn btn-secondary">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="9" cy="9" r="2"/>
+                    <path d="M21 15l-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                  </svg>
+                  View Projects
+                </Link>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
     </div>
   );
 };

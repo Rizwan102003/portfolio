@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,106 +18,110 @@ const Navbar = () => {
     setIsMobileMenuOpen(false);
   }, [location]);
 
-  const navLinkStyles = ({ isActive }) =>
-    `nav-link ${isActive ? 'active' : ''}`;
+  const navItems = [
+    { name: 'About', path: '/about' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Resume', path: '/resume' },
+    { name: 'Contact', path: '/contact' }
+  ];
 
   return (
-    <nav className={`fixed w-full top-0 z-50 transition-all ${
-      isScrolled 
-        ? 'bg-secondary border-b border' 
-        : 'bg-primary'
-    }`}>
-      <div className="container">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <Link 
-            to="/portfolio" 
-            className="text-primary font-semibold text-lg hover:text-accent transition-all"
-          >
-            <span className="font-mono text-accent">&lt;</span>
-            Rizwan
-            <span className="font-mono text-accent">/&gt;</span>
-          </Link>
-          
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-2">
-            <NavLink to="/portfolio" className={navLinkStyles}>
-              Home
-            </NavLink>
-            <NavLink to="/about" className={navLinkStyles}>
-              About
-            </NavLink>
-            <NavLink to="/projects" className={navLinkStyles}>
-              Projects
-            </NavLink>
-            <NavLink to="/resume" className={navLinkStyles}>
-              Resume
-            </NavLink>
-            <NavLink to="/contact" className={navLinkStyles}>
-              Contact
-            </NavLink>
+    <>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+      <nav className="navbar" role="navigation" aria-label="Main navigation">
+        <div className="container">
+          <div className="nav-content">
+            {/* Logo */}
+            <Link to="/portfolio" className="nav-logo" aria-label="Home">
+              Sk Md Rizwan
+            </Link>
+            
+            {/* Desktop Navigation */}
+            <ul className="nav-links" role="menubar">
+              {navItems.map((item) => (
+                <li key={item.name} role="none">
+                  <Link
+                    to={item.path}
+                    className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
+                    role="menuitem"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+              <li role="none">
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                  role="menuitem"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7,10 12,15 17,10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                  Resume
+                </a>
+              </li>
+            </ul>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="nav-toggle"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle navigation menu"
+              aria-expanded={isMobileMenuOpen}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                {isMobileMenuOpen ? (
+                  <path d="M18 6L6 18M6 6l12 12" />
+                ) : (
+                  <path d="M3 12h18M3 6h18M3 18h18" />
+                )}
+              </svg>
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-muted hover:text-primary hover:bg-tertiary rounded-lg transition-all"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-            aria-expanded={isMobileMenuOpen}
-          >
-            <div className="w-6 h-6 flex flex-col justify-center items-center">
-              <span className={`bg-current block transition-all duration-200 ease-out h-0.5 w-6 rounded-sm ${
-                isMobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'
-              }`}></span>
-              <span className={`bg-current block transition-all duration-200 ease-out h-0.5 w-6 rounded-sm my-0.5 ${
-                isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
-              }`}></span>
-              <span className={`bg-current block transition-all duration-200 ease-out h-0.5 w-6 rounded-sm ${
-                isMobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'
-              }`}></span>
-            </div>
-          </button>
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <ul className="nav-links mobile-open" role="menu">
+              {navItems.map((item) => (
+                <li key={item.name} role="none">
+                  <Link
+                    to={item.path}
+                    className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
+                    role="menuitem"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+              <li role="none">
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                  role="menuitem"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7,10 12,15 17,10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                  Resume
+                </a>
+              </li>
+            </ul>
+          )}
         </div>
-
-        {/* Mobile Menu */}
-        <div className={`md:hidden transition-all duration-200 overflow-hidden ${
-          isMobileMenuOpen ? 'max-h-64 opacity-100 pb-4' : 'max-h-0 opacity-0'
-        }`}>
-          <div className="bg-secondary rounded-xl border p-4 flex flex-col gap-2">
-            <NavLink 
-              to="/portfolio" 
-              className={navLinkStyles}
-            >
-              Home
-            </NavLink>
-            <NavLink 
-              to="/about" 
-              className={navLinkStyles}
-            >
-              About
-            </NavLink>
-            <NavLink 
-              to="/projects" 
-              className={navLinkStyles}
-            >
-              Projects
-            </NavLink>
-            <NavLink 
-              to="/resume" 
-              className={navLinkStyles}
-            >
-              Resume
-            </NavLink>
-            <NavLink 
-              to="/contact" 
-              className={navLinkStyles}
-            >
-              Contact
-            </NavLink>
-          </div>
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 };
 
