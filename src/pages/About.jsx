@@ -28,7 +28,7 @@ const About = () => {
       icon: '🤖',
       title: 'Salesforce AI Associate',
       description: 'Specialized in AI and automation solutions',
-      year: '2023'
+      year: '2024'
     },
     {
       icon: '📊',

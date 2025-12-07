@@ -64,7 +64,7 @@ const Home = () => {
   const skillCategories = [
     {
       category: 'Languages',
-      skills: ['Java', 'Python', 'Go', 'JavaScript', 'SQL']
+      skills: ['Java', 'Python', 'Golang', 'JavaScript', 'SQL']
     },
     {
       category: 'Frameworks',
