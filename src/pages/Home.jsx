@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [typedText, setTypedText] = useState('');
-  const fullText = "Full-stack Java | Data Science | Cloud & DevOps";
+  const fullText = "Full-stack | Data Science | Cloud & DevOps";
 
   useEffect(() => {
     let index = 0;
